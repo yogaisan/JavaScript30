@@ -25,6 +25,7 @@ body {
   position: relative;
   font-size: 0;
   overflow: hidden;
+  cursor: pointer;
 }
 
 /* This css is only applied when fullscreen is active. */
@@ -94,14 +95,14 @@ body {
   height: 5px;
   transition: height 0.3s;
   background: rgba(0,0,0,0.5);
-  cursor: ew-resize;
+  cursor: pointer;
 }
 
 .progress__filled {
   width: 50%;
   background: #ffc600;
   flex: 0;
-  flex-basis: 50%;
+  flex-basis: 0%;
 }
 
 /* unholy css to style input type="range" */
@@ -159,4 +160,13 @@ input[type=range]::-moz-range-thumb {
   border-radius: 50px;
   background: #ffc600;
   cursor: pointer;
+}
+
+.fullscreen-button {
+  flex-grow: 0;
+  background-color: transparent;
+  cursor: pointer;
+  color: antiquewhite;
+  border: none;
+  font-size: 15px;
 }
