@@ -53,6 +53,7 @@ html {
   background: white;
 }
 
+
 .strip a:nth-child(5n+1) img { transform: rotate(10deg); }
 .strip a:nth-child(5n+2) img { transform: rotate(-2deg); }
 .strip a:nth-child(5n+3) img { transform: rotate(8deg); }
