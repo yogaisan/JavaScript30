@@ -3,7 +3,7 @@ const itemsList = document.querySelector('.plates');
 const items = JSON.parse(localStorage.getItem('items')) || [];
 const btnClear = document.querySelector('.btn-clear');
 const btnCheck = document.querySelector('.btn-check');
-
+const btnUncheck = document.querySelector('.btn-uncheck');
 
 const addItem = (event) => {
   event.preventDefault();
@@ -61,7 +61,23 @@ const clearAll = () => {
 
 const checkAll = () => {
   items.forEach((item) => {
-    item.done = !item.done;
+    if (item.done === true) {
+      item.done
+    } else {
+      item.done = !item.done;
+    }
+  })
+  localStorage.setItem('items', JSON.stringify(items));
+  populateList(items, itemsList);
+};
+
+const uncheckAll = () => {
+  items.forEach((item) => {
+    if (item.done === true) {
+      item.done = !item.done;
+    } else {
+      !item.done;
+    }
   })
   localStorage.setItem('items', JSON.stringify(items));
   populateList(items, itemsList);
@@ -71,6 +87,8 @@ addItems.addEventListener('submit', addItem);
 itemsList.addEventListener('click', toggleDone);
 btnClear.addEventListener('click', clearAll);
 btnCheck.addEventListener('click', checkAll);
+btnUncheck.addEventListener('click', uncheckAll);
+
 
 // when the page loads
 populateList(items, itemsList);
