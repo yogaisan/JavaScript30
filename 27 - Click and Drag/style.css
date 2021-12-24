@@ -27,7 +27,7 @@ body {
   overflow-y: hidden;
   white-space: nowrap;
   user-select: none;
-  cursor: pointer;
+  cursor: grab;
   transition: all 0.2s;
   transform: scale(0.98);
   will-change: transform;
