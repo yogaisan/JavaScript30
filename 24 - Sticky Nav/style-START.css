@@ -25,6 +25,11 @@ body {
   transition: transform 0.5s;
 }
 
+/* when the body has a class of fixed-nav, the site-wrap is going to scale up to 1 */
+.fixed-nav .site-wrap {
+  transform: scale(1);
+}
+
 header {
   text-align: center;
   height: 50vh;
@@ -50,6 +55,11 @@ nav {
   z-index: 1;
 }
 
+.fixed-nav nav {
+  position: fixed;
+  box-shadow: 0 5px rgba(0, 0, 0, 0.1);
+}
+
 nav ul {
   margin: 0;
   padding:0;
@@ -66,12 +76,17 @@ nav li {
 }
 
 li.logo {
-  max-width: 0;
+  max-width: 0; /* We need to use max-width in order to get that transition to kick in */
   overflow: hidden;
   background: white;
-  transition: all .5s;
+  transition: all 1s;
   font-weight: 600;
   font-size: 30px;
+}
+
+/* When the body has a class of fixed-nav, the li with the class of logo is going to have a max-width of something bigger than it will ever be */
+.fixed-nav li.logo {
+  max-width: 500px;
 }
 
 li.logo a {
